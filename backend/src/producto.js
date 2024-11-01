@@ -34,6 +34,7 @@ router.post('/carga-masiva', upload.single('file'), (req, res) => {
             });
 
             // Eliminar el archivo correctamente
+            // fs.unlinkSync es sincrono y fs.unlink es asincrono
             fs.unlink(req.file.path, (err) => {
                 if (err) {
                     return res.status(500).send({ message: 'Error al eliminar el archivo' });
