@@ -13,8 +13,8 @@ router.get('/obtener-producto', (req, res) => {
     res.send(productos);
 });
 
-// Comentario extra
-// Ruta para subir un archivo
+// Subir un archivo
+// Nuevo comentario
 router.post('/carga-masiva', upload.single('file'), (req, res) => {
 
     if (!req.file) {
@@ -33,7 +33,7 @@ router.post('/carga-masiva', upload.single('file'), (req, res) => {
                 productos.push(element);
             });
 
-            // Eliminar el archivo
+            // Eliminar el archivo correctamente
             fs.unlink(req.file.path, (err) => {
                 if (err) {
                     return res.status(500).send({ message: 'Error al eliminar el archivo' });
