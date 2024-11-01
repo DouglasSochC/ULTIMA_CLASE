@@ -14,7 +14,7 @@ router.get('/obtener-producto', (req, res) => {
 });
 
 // Subir un archivo
-// Nuevo comentario
+// Nuevo comentario se me olvido agregar el archivo
 router.post('/carga-masiva', upload.single('file'), (req, res) => {
 
     if (!req.file) {
